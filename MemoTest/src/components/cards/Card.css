@@ -1,0 +1,23 @@
+.card-wrapper{
+    width: 100px;
+    height: 100px;
+    border-width: 2px;
+    border-radius: 5%;    
+    padding: 10px;
+    margin: 5px;
+}
+
+.unclicked-card {
+ border: 2px solid black;
+}
+
+.clicked-card {
+    border: 2px solid green;
+}
+
+
+
+.card-image {
+    width: 100px;
+    height: 100px;
+}
