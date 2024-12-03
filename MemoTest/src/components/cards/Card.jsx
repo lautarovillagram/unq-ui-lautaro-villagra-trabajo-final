@@ -6,6 +6,8 @@ import { useState } from 'react';
 function Card( clicked ) {
 const [isClicked, setIsClicked] = useState(false);
 
+
+
   const handleClick = () => {
     setIsClicked(!isClicked); 
   };
