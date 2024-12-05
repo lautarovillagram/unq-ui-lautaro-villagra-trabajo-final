@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import Card from '../cards/Card.jsx';
+import Card from '../../Card/Card.jsx';
 import './Grid.css';
-import data from '../../data/Data.jsx';
-import ShuffleArray from '../../misc/ArrayShuffler';
+import data from '../../../data/Data.jsx';
+import ShuffleArray from '../../../misc/ArrayShuffler.jsx';
 
 function Grid() {
     const [shuffledCards, setShuffledCards] = useState([]);
