@@ -2,29 +2,25 @@ import logo from '../../assets/react.svg'
 import './Card.css'
 import { useState, useEffect } from 'react';
 
-function Card( {id, image, resetSignal, whenClicked, revealedCards} ) {
+function Card( {card, resetSignal, whenClicked, revealedCards} ) {
 const [isRevealed, setIsRevealed] = useState(false);
-
-
-
 
   const handleClick = () => {
     if (!isRevealed && revealedCards < 2) {
       setIsRevealed(true); 
-      whenClicked(id);
+      whenClicked(card.id);
     }
   };
 
   useEffect(() => {
-    if (resetSignal) {
-      setTimeout(() => setIsRevealed(false), 1000);
-      
+    if (resetSignal && resetSignal.includes(card.id)) {
+      setTimeout(() => setIsRevealed(false), 1000);      
     }
   }, [resetSignal]);
    
   return(        
     <div className={`card-wrapper ${isRevealed? 'clicked-card' : 'unclicked-card'}`} onClick={handleClick}  >
-      <img className='card-image' src={isRevealed ? image : logo}/>       
+      <img className='card-image' src={isRevealed ? card.image : logo}/>       
     </div>
   );
 }
