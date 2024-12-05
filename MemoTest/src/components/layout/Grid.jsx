@@ -1,11 +1,18 @@
 import { useState, useEffect } from 'react';
 import Card from '../cards/Card.jsx';
 import './Grid.css';
-import data from '../../mock/cards.json';
+import data from '../../data/Data.jsx';
+import ShuffleArray from '../../misc/ArrayShuffler';
 
 function Grid() {
+    const [shuffledCards, setShuffledCards] = useState([]);
     const [clickedCards, setClickedCards] = useState([]);       
-    const [resetSignal, setResetSignal] = useState(false);
+    const [resetSignal, setResetSignal] = useState(null);
+
+    useEffect(() => {      
+      setShuffledCards(ShuffleArray(data.cards));
+    }, []);
+
 
     const handleCardClick = (card) => {
       if (clickedCards.length < 2) { 
@@ -19,16 +26,17 @@ function Grid() {
       if (firstCard.id === secondCard.id) {
         console.log("same cards");
       } else {
+        console.log(clickedCards);
         console.log("different cards");
-        triggerReset();
+        triggerReset(clickedCards.map((card) => card.id));
       }
       setTimeout(() => setClickedCards([]), 1000);
       
     };
 
-    const triggerReset = () => {
-      setResetSignal(true);
-      setTimeout(() => setResetSignal(false), 0); 
+    const triggerReset = (idsToReset) => {
+      setResetSignal(idsToReset);
+      setTimeout(() => setResetSignal(null), 0); 
     };
 
 
@@ -43,8 +51,8 @@ function Grid() {
     return (
         <>
         <div className="grid-wrapper">             
-          {data.cards.map((card, index) => (
-          <Card key={index} id={card.id} image={card.image} revealedCards={clickedCards.length} resetSignal={resetSignal} whenClicked={() =>  handleCardClick({ id: card.id, index })  } /> 
+          {shuffledCards.map((card, index) => (
+          <Card key={index} card={card} revealedCards={clickedCards.length} resetSignal={resetSignal} whenClicked={() =>  handleCardClick({ id: card.id, index })  } /> 
           ))} 
         </div>
         </>
