@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import Grid from './components/layout/Grid.jsx'
+import Grid from './components/layout/Grid/Grid.jsx'
 import './App.css'
+import Menu from './components/layout/Menu/Menu.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -10,20 +11,11 @@ function App() {
   return (
     <>
       
-      <h1>MemoTest</h1>
-      <p>Cantidad de jugadores</p>
-      <button>1</button>
-      <button>2</button>
-      <p>Tamaño del tablero</p>
-      <button>4x4</button>
-      <button>6x6</button>
-      <button>8x8</button>
-      <div>        
-      <button>Comenzar</button>    
+      <Menu/>   
       
-      </div>  
+      
         
-      <p className="read-the-docs">
+      <p>
         _______________________________________
       </p>
       <Grid/>
