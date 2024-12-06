@@ -1,24 +1,22 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import Grid from './components/layout/Grid/Grid.jsx'
+import SinglePlayerBoard from './components/layout/Boards/SinglePlayerBoard.jsx'
 import './App.css'
 import Menu from './components/layout/Menu/Menu.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [players, setPlayers] = useState(1);
+  const [boardSize, setBoardSize] = useState(4);
+  const [showMenu, setShowMenu] = useState(true);
 
   return (
     <>
       
-      <Menu/>   
-      
-      
-        
-      <p>
-        _______________________________________
-      </p>
-      <Grid/>
+
+      {showMenu ? 
+      <Menu players={setPlayers} board={setBoardSize} start={setShowMenu}/>         
+      :
+      <SinglePlayerBoard size={boardSize} start={setShowMenu}/>
+      }
     
     </>
   )
