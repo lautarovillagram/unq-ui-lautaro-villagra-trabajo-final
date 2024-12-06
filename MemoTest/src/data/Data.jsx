@@ -4,6 +4,8 @@ import cake from '../assets/cardsImages/cake.svg'
 import chef from '../assets/cardsImages/chef.svg'
 import donut from '../assets/cardsImages/donut.svg'
 import icecream from '../assets/cardsImages/icecream.svg'
+import container from '../assets/cardsImages/container.svg'
+import pepper from '../assets/cardsImages/pepper.svg'
   
 
 const data = {
@@ -20,6 +22,10 @@ const data = {
       { id: "4", image: donut },
       { id: "5", image: icecream },
       { id: "5", image: icecream },
+      { id: "6", image: container },
+      { id: "6", image: container },
+      { id: "7", image: pepper },
+      { id: "7", image: pepper },
     ],
   };
 
