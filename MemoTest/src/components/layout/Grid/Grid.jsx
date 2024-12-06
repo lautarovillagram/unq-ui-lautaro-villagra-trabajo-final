@@ -4,7 +4,7 @@ import './Grid.css';
 import data from '../../../data/Data.jsx';
 import ShuffleArray from '../../../misc/ArrayShuffler.jsx';
 
-function Grid() {
+function Grid( {board, turnCounter, revealed}) {
     const [shuffledCards, setShuffledCards] = useState([]);
     const [clickedCards, setClickedCards] = useState([]);       
     const [resetSignal, setResetSignal] = useState(null);
@@ -25,18 +25,21 @@ function Grid() {
   
       if (firstCard.id === secondCard.id) {
         console.log("same cards");
+        revealed();
       } else {
         console.log(clickedCards);
         console.log("different cards");
         triggerReset(clickedCards.map((card) => card.id));
       }
       setTimeout(() => setClickedCards([]), 1000);
+      turnCounter();
       
     };
 
     const triggerReset = (idsToReset) => {
       setResetSignal(idsToReset);
       setTimeout(() => setResetSignal(null), 0); 
+      
     };
 
 
@@ -49,13 +52,13 @@ function Grid() {
 
     
     return (
-        <>
-        <div className="grid-wrapper">             
-          {shuffledCards.map((card, index) => (
-          <Card key={index} card={card} revealedCards={clickedCards.length} resetSignal={resetSignal} whenClicked={() =>  handleCardClick({ id: card.id, index })  } /> 
-          ))} 
-        </div>
-        </>
+      <>
+      <div className={`grid-wrapper grid-columns-${board}`}>
+        {shuffledCards.map((card, index) => (
+        <Card key={index} card={card} revealedCards={clickedCards.length} resetSignal={resetSignal} whenClicked={() =>  handleCardClick({ id: card.id, index })  } /> 
+        ))} 
+      </div>
+      </>
     );
 }
 
