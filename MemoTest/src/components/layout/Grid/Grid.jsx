@@ -42,6 +42,8 @@ function Grid( {board, turnCounter, revealed}) {
       
     };
 
+    
+
 
     useEffect(() => {
       if (clickedCards.length === 2) {
