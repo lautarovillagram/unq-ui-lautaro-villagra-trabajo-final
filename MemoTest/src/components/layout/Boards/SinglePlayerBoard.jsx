@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import Grid from "../Grid/Grid";
 import WinnerMessage from "../WinnerMessage/WinnerMessage";
+import './SinglePlayerBoard.css'
 
 function SinglePlayerBoard({size, toggleMenu}) {
     const [turns, setTurns] = useState(0);
@@ -32,11 +33,13 @@ function SinglePlayerBoard({size, toggleMenu}) {
       }
 
     return(
-        <>
-        <h2>Turnos: {turns}</h2>
-        <Grid key={gameKey} board={size} turnCounter={addTurn} revealed={addRevealedPair}/>
-        {gameEnded() && <WinnerMessage turns={turns} menu={toggleMenu} restart= {restartGame}/> }
-        </>
+        
+        <div className="board-wrapper">
+            <h2 className="sp-turns">Turnos: {turns}</h2>
+            <Grid key={gameKey} board={size} turnCounter={addTurn} revealed={addRevealedPair}/>
+            {gameEnded() && <WinnerMessage turns={turns} menu={toggleMenu} restart= {restartGame}/> }
+        </div>
+        
     )
 }
 
