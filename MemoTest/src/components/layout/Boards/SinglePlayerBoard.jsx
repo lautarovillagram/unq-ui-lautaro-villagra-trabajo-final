@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react"
 import Grid from "../Grid/Grid";
+import WinnerMessage from "../WinnerMessage/WinnerMessage";
 
-function SinglePlayerBoard({size, menu}) {
+function SinglePlayerBoard({size, toggleMenu}) {
     const [turns, setTurns] = useState(0);
-    const [revealedPairs, setRevealedPairs] = useState(0);
+    const [revealedPairs, setRevealedPairs] = useState(8);
     var pairs = (size * size) / 2;
+    const [gameKey, setGameKey] = useState(0);
+
 
     function addTurn() {
         setTurns(turns + 1);
@@ -22,12 +25,17 @@ function SinglePlayerBoard({size, menu}) {
         setRevealedPairs(revealedPairs + 1)
     }
 
+    function restartGame() {
+        setTurns(0); 
+        setRevealedPairs(0); 
+        setGameKey((prev) => prev + 1); 
+      }
 
     return(
         <>
         <h2>Turnos: {turns}</h2>
-        <Grid board={size} turnCounter={addTurn} revealed={addRevealedPair}/>
-        {gameEnded() && <h2>Winner winner chicken dinner</h2>}
+        <Grid key={gameKey} board={size} turnCounter={addTurn} revealed={addRevealedPair}/>
+        {gameEnded() && <WinnerMessage turns={turns} menu={toggleMenu} restart= {restartGame}/> }
         </>
     )
 }
