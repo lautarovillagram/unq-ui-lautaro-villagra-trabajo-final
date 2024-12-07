@@ -1,4 +1,4 @@
-import logo from '../../assets/react.svg'
+import logo from '../../assets/libertadores-logo.png'
 import './Card.css'
 import { useState, useEffect } from 'react';
 
