@@ -6,6 +6,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 1%;
 }
 
 .sp-turns {
@@ -15,7 +16,7 @@
     padding: 1% 2%;
     background-color: rgb(51, 50, 50);
     border: 1px solid orange;
-    height: 10%;
+    height: 4%;
     align-items: center;
     padding: 1%;
 }
@@ -23,6 +24,8 @@
 .sp-turns-counter {
     align-items: center;
     background-color: orange;  
+    height: 40%;
+    aspect-ratio: 1;
      
     
 }
