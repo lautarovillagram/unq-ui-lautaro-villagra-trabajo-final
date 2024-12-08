@@ -1,5 +1,4 @@
-#root {
-  max-width: 1280px;
+html, body, #root {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -7,6 +6,10 @@
   min-height: 100vh;
   min-width: 100%;
   background-position: center;
+  height: 100%; 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
 }
 
 h2 {
@@ -25,13 +28,10 @@ button {
   border-radius: 10%;
 }
 
-
-
-
-
-
-
-
-
-
-
+.full-height {
+  height: 100vh;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;
+}

@@ -10,14 +10,14 @@ function App() {
 
   return (
     <>
-      
+      <div className="full-height">
 
       {showMenu ? 
       <Menu players={setPlayers} board={setBoardSize} start={setShowMenu}/>         
       :
       <SinglePlayerBoard size={boardSize} toggleMenu={setShowMenu}/>
       }
-    
+    </div>
     </>
   )
 }

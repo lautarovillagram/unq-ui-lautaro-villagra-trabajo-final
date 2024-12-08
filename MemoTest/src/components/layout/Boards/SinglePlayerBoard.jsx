@@ -35,7 +35,10 @@ function SinglePlayerBoard({size, toggleMenu}) {
     return(
         
         <div className="board-wrapper">
-            <h2 className="sp-turns">Turnos: {turns}</h2>
+            <div className="sp-turns">
+            <h2>Turnos: </h2>
+            <div className="sp-turns-counter">{turns}</div>
+            </div>
             <Grid key={gameKey} board={size} turnCounter={addTurn} revealed={addRevealedPair}/>
             {gameEnded() && <WinnerMessage turns={turns} menu={toggleMenu} restart= {restartGame}/> }
         </div>
