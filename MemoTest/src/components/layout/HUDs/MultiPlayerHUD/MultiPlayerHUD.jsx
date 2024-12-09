@@ -6,9 +6,15 @@ function MultiPlayerHUD({playedTurns, revealedPairs, totalPairs, returnToMenu, r
     const [player1Score, setPlayer1Score] = useState(0);
     const [player2Score, setPlayer2Score] = useState(0);
     const [playerTurn, setPlayerTurn] = useState(null);
+    const [isMounted, setIsMounted] = useState(false);
+
 
     useEffect(() => {
-        addPointToPlayer();
+        if (isMounted) {
+            addPointToPlayer();
+        } else {
+            setIsMounted(true);
+        }
       }, [revealedPairs]);
 
     
@@ -23,14 +29,15 @@ function MultiPlayerHUD({playedTurns, revealedPairs, totalPairs, returnToMenu, r
     function gameEnded() {
         return revealedPairs === totalPairs;
     }
+    
 
     function winner() {
         if (player1Score > player2Score) {
-            return {winner:"Jugador 1", score:{player1Score} + "-" + {player2Score} };
+            return {winner:"Jugador 1", score: `${player1Score}-${player2Score}` };
         } else if (player2Score > player1Score) {
-            return {winner:"Jugador 2", score:{player2Score} + "-" + {player1Score} };
+            return {winner:"Jugador 2", score: `${player2Score}-${player1Score}` };
         } else {
-            return {winner:"tie", score:{player1Score} + "-" + {player2Score} };
+            return {winner:"tie", score: `${player1Score}-${player2Score}` };
         }
     }
     
@@ -56,11 +63,11 @@ function MultiPlayerHUD({playedTurns, revealedPairs, totalPairs, returnToMenu, r
             <p>C.A. Jugador 2</p>
             <div className="mp-turns">{playedTurns}</div>
             
-            <h2>Turno de {playerTurn}</h2>
+            <h2>Turno de Jugador {playerTurn}</h2>
             </div>
             
         :
-        <WinnerMessage turns={playedTurns} menu={returnToMenu} restart={restartGame} result={winner}/>
+        <WinnerMessage turns={playedTurns} menu={returnToMenu} restart={restartGame} result={winner()}/>
         }
         
         
