@@ -3,6 +3,7 @@ import Grid from "../Grid/Grid";
 import WinnerMessage from "../WinnerMessage/WinnerMessage";
 import './SinglePlayerBoard.css'
 import MultiPayerHUD from '../HUDs/MultiPlayerHUD/MultiPlayerHUD.jsx'
+import SinglePlayerHUD from "../HUDs/SinglePlayerHUD/singlePlayerHUD.jsx";
 
 function SinglePlayerBoard({size, toggleMenu, players}) {
     const [turns, setTurns] = useState(0);
@@ -29,19 +30,20 @@ function SinglePlayerBoard({size, toggleMenu, players}) {
         setTurns(0); 
         setRevealedPairs(0); 
         setGameKey((prev) => prev + 1); 
-      }
+    }
+
+    function gameEnded() {
+        return revealedPairs === pairs;
+    }
 
     return(
         
         <div className="board-wrapper">
-            {players == 1 ?
-             <MultiPayerHUD playedTurns={turns} revealedPairs={revealedPairs} totalPairs={pairs} returnToMenu={toggleMenu} restartGame={restartGame}/>
+            {players === 1 ?
+             <MultiPayerHUD key={gameKey+1} playedTurns={turns} gameStatus={gameEnded()} returnToMenu={toggleMenu} restartGame={restartGame}/>
              :
-             <div className="sp-turns">
-               <h2>Turnos: </h2>
-                  <div className="sp-turns-counter">{turns}</div>
-                </div>
-            }
+             <SinglePlayerHUD playedTurns={turns} returnToMenu={toggleMenu} restartGame={restartGame}/>
+             }
 
             
             <Grid key={gameKey} board={size} turnCounter={addTurn} revealed={addRevealedPair}/>
