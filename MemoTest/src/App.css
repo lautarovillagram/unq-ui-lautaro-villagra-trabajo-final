@@ -22,10 +22,12 @@ p {
 }
 
 button {
-  background-color: gray;
-  padding: 1%;
+  background-color: rgb(78, 77, 77);
+  padding: 1% 2%;
   font-size: large;
   border-radius: 10%;
+  border: 2px solid orange;
+  margin: 5px;
 }
 
 .full-height {
