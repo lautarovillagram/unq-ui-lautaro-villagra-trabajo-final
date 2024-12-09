@@ -26,9 +26,7 @@ function MultiPlayerHUD({playedTurns, revealedPairs, totalPairs, returnToMenu, r
       }
     }, [playedTurns]);
 
-    function gameEnded() {
-        return revealedPairs === totalPairs;
-    }
+
     
 
     function winner() {
