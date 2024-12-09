@@ -15,7 +15,7 @@ function App() {
       {showMenu ? 
       <Menu players={setPlayers} board={setBoardSize} start={setShowMenu}/>         
       :
-      <SinglePlayerBoard size={boardSize} toggleMenu={setShowMenu}/>
+      <SinglePlayerBoard size={boardSize} toggleMenu={setShowMenu} players={players}/>
       }
     </div>
     </>
