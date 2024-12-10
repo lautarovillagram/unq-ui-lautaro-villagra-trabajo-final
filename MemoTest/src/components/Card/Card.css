@@ -22,7 +22,6 @@
 
 
 .card-image {
-    width: 90%;
+    width: 75%;
     height: 90%;
-    object-fit: cover;
 }
