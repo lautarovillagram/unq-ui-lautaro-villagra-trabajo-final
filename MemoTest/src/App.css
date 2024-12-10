@@ -2,7 +2,9 @@ html, body, #root {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  background-color: #000;
+  background-image: url('./assets/background.png');
+  background-size: cover;
+  background-position: center;
   min-height: 100vh;
   min-width: 100%;
   background-position: center;
