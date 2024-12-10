@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
-import Grid from "../Grid/Grid";
-import WinnerMessage from "../WinnerMessage/WinnerMessage";
+import Grid from "../Grid/Grid.jsx";
 import './SinglePlayerBoard.css'
 import MultiPayerHUD from '../HUDs/MultiPlayerHUD/MultiPlayerHUD.jsx'
 import SinglePlayerHUD from "../HUDs/SinglePlayerHUD/singlePlayerHUD.jsx";
@@ -40,9 +39,11 @@ function SinglePlayerBoard({size, toggleMenu, players}) {
         
         <div className="board-wrapper">
             {players === 1 ?
-             <MultiPayerHUD key={gameKey+1} playedTurns={turns} gameStatus={gameEnded()} returnToMenu={toggleMenu} restartGame={restartGame}/>
+             <SinglePlayerHUD playedTurns={turns} returnToMenu={toggleMenu} restartGame={restartGame} gameStatus={gameEnded()}/>
+
              :
-             <SinglePlayerHUD playedTurns={turns} returnToMenu={toggleMenu} restartGame={restartGame}/>
+             <MultiPayerHUD key={gameKey+1} revealedPairs={revealedPairs} playedTurns={turns} gameStatus={gameEnded()} returnToMenu={toggleMenu} restartGame={restartGame}/>
+
              }
 
             
