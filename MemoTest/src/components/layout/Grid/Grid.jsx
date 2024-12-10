@@ -9,8 +9,10 @@ function Grid( {board, turnCounter, revealed}) {
     const [clickedCards, setClickedCards] = useState([]);       
     const [resetSignal, setResetSignal] = useState(null);
 
+
     useEffect(() => {      
-      setShuffledCards(ShuffleArray(data.cards));
+      const selectedCards = data.cards.slice(0, (board * board))
+      setShuffledCards(ShuffleArray(selectedCards));
     }, []);
 
 
