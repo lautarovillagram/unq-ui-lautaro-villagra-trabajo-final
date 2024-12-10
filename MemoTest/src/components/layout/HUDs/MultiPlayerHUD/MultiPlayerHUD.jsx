@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import './MultiPlayerHUD.css'
 import WinnerMessage from "../../WinnerMessage/WinnerMessage";
+import logo from '../../../../assets/libertadores-logo.png'
 
-function MultiPlayerHUD({playedTurns, revealedPairs, totalPairs, returnToMenu, restartGame}) {
+function MultiPlayerHUD({playedTurns, revealedPairs, gameStatus, returnToMenu, restartGame}) {
     const [player1Score, setPlayer1Score] = useState(0);
     const [player2Score, setPlayer2Score] = useState(0);
     const [playerTurn, setPlayerTurn] = useState(null);
     const [isMounted, setIsMounted] = useState(false);
-
 
     useEffect(() => {
         if (isMounted) {
@@ -51,21 +51,26 @@ function MultiPlayerHUD({playedTurns, revealedPairs, totalPairs, returnToMenu, r
     return (
         <>
         
-        {!gameEnded() ?
-            <div className="mp-score-wrapper">
-            <p>Jugador 1 F.C.</p>
-            <div className="score">
-                <p>{player1Score} - {player2Score}</p>
-
-            </div>
-            <p>C.A. Jugador 2</p>
-            <div className="mp-turns">{playedTurns}</div>
-            
-            <h2>Turno de Jugador {playerTurn}</h2>
-            </div>
-            
-        :
+        {gameStatus ?
         <WinnerMessage turns={playedTurns} menu={returnToMenu} restart={restartGame} result={winner()}/>
+          
+        :
+        <div className="mp-score-wrapper">
+            <div className="mp-score">
+                <img src={logo}/>
+                <p className="mp-score-padding">J1 F.C.</p>
+                    <div className="score">
+                        <p>{player1Score} - {player2Score}</p>
+
+                    </div>
+                <p>C.A. J2</p>
+                <h2>{playedTurns}</h2>
+            </div>
+        
+        <h2>Turno de Jugador {playerTurn}</h2>
+        </div>
+        
+        
         }
         
         

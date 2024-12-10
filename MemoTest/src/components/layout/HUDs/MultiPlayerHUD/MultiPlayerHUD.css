@@ -1,5 +1,38 @@
 .mp-score-wrapper {
     display: flex;
-    flex-direction: row;
-    padding: 10px;
+    flex-direction: column;
+    padding: 5px;
+    border: 1px solid red;
+    max-height: 25%;
+    align-items: center;
 }
+
+.mp-score {
+    display: flex;
+    flex-direction: row;    
+    align-items: center;
+    padding: 10px;
+    border: 1px solid orange;
+    height: 40%;
+    align-content: space-evenly;
+    justify-content: center;
+}
+
+.mp-score img {
+    width: 8%;
+    height: max-content;
+    aspect-ratio: 1;
+}
+
+.mp-score p {
+    font-size: larger;
+    font-weight: bold;
+}
+
+.mp-score h2 {
+    background-color: #c3aa67;
+    color: black;
+    padding: 0% 3%;
+    height: 50%;
+}
+
