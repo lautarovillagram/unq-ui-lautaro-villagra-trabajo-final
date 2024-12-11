@@ -24,7 +24,7 @@ function WinnerMessage({turns, menu, restart, result}){
             andTheWinnerIs()         
         
         }
-        <div className="SP-winner-message-buttons">
+        <div className="winner-message-buttons">
                 <button onClick={restart}>Revancha</button>
                 <button onClick={menu}>menu principal</button>
             </div>
