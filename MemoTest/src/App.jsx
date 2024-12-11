@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import SinglePlayerBoard from './components/layout/Boards/SinglePlayerBoard.jsx'
+import Board from './components/layout/Board/Board.jsx'
 import './App.css'
 import Menu from './components/layout/Menu/Menu.jsx'
 
@@ -15,7 +15,7 @@ function App() {
       {showMenu ? 
       <Menu players={setPlayers} board={setBoardSize} start={setShowMenu}/>         
       :
-      <SinglePlayerBoard size={boardSize} toggleMenu={setShowMenu} players={players}/>
+      <Board size={boardSize} toggleMenu={setShowMenu} players={players}/>
       }
     </div>
     </>

@@ -24,7 +24,7 @@ p {
 }
 
 button {
-  background-color: rgb(78, 77, 77);
+  background-color: rgb(57, 57, 57);
   padding: 1% 2%;
   font-size: large;
   border-radius: 10%;
@@ -38,4 +38,9 @@ button {
   flex-direction: column; 
   justify-content: center; 
   align-items: center;
+}
+
+button:hover {
+  background-color: orange;
+  border-color: orange;
 }
