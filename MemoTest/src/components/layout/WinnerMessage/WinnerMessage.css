@@ -3,6 +3,23 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    
+    height: 60%;
+    width: 60%;   
 
+}
+
+.winner-message-buttons button {
+    width: 50%;
+    height: 80%;
+}
+
+.winner-message-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 30%;
+    align-items: center;
+}
+
+.winner-message-wrapper h2 {
+    width: 100%;
 }

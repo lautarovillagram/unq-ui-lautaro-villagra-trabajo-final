@@ -9,7 +9,7 @@ function WinnerMessage({turns, menu, restart, result}){
            <h2>El marcador quedó igualado {result.score}</h2>
        
             :
-            <p>Felicitaciones {result.winner}! Ganaste el partido por {result.score}</p>
+            <h2>Felicitaciones {result.winner}! Ganaste el partido por {result.score}</h2>
 
 
 
@@ -18,6 +18,7 @@ function WinnerMessage({turns, menu, restart, result}){
     }
     return(
         <>
+        <div className='winner-message-wrapper'>
         {!result ? 
             <h2>Felicitaciones! completaste el tablero en {turns} turnos</h2>
             :
@@ -25,9 +26,10 @@ function WinnerMessage({turns, menu, restart, result}){
         
         }
         <div className="winner-message-buttons">
-                <button onClick={restart}>Revancha</button>
+                <button onClick={restart}>Jugar revancha</button>
                 <button onClick={menu}>menu principal</button>
-            </div>
+        </div>
+        </div>
             
         </>
     )
