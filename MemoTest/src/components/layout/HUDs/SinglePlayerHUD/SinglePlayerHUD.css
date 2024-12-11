@@ -1,0 +1,19 @@
+.sp-turns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 5%;
+    padding: 1% 2%;
+    background-color: rgb(51, 50, 50);
+    height: 2%;
+    padding: 2%;
+}
+
+.sp-turns-counter {
+    justify-content: center;
+    background-color: orange;  
+    height: 100%;
+    width: 15%;
+    font-weight: bold;     
+    
+}

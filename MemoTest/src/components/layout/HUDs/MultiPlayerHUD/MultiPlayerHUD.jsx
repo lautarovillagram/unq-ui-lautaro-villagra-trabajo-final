@@ -58,16 +58,16 @@ function MultiPlayerHUD({playedTurns, revealedPairs, gameStatus, returnToMenu, r
         <div className="mp-score-wrapper">
             <div className="mp-score">
                 <img src={logo}/>
-                <p className="mp-score-padding">J1 F.C.</p>
-                    <div className="score">
+                <p className="mp-score-segment">J1 F.C.</p>
+                    <div className="mp-score-segment">
                         <p>{player1Score} - {player2Score}</p>
 
                     </div>
-                <p>C.A. J2</p>
+                <p className="mp-score-segment">C.A. J2</p>
                 <h2>{playedTurns}</h2>
             </div>
         
-        <h2>Turno de Jugador {playerTurn}</h2>
+        <h2>Turno del Jugador {playerTurn}</h2>
         </div>
         
         

@@ -1,10 +1,11 @@
 .mp-score-wrapper {
     display: flex;
     flex-direction: column;
-    padding: 5px;
-    border: 1px solid red;
-    max-height: 25%;
+    padding: 10px;
+    height: 15%;
     align-items: center;
+    width: 60%;
+
 }
 
 .mp-score {
@@ -12,16 +13,20 @@
     flex-direction: row;    
     align-items: center;
     padding: 10px;
-    border: 1px solid orange;
     height: 40%;
-    align-content: space-evenly;
-    justify-content: center;
+    width: 95%;
+    align-content: space-between;
+    justify-content: center; 
+
 }
 
 .mp-score img {
-    width: 8%;
-    height: max-content;
+    width: 7%;
     aspect-ratio: 1;
+    height: max-content;
+   
+    padding: 2%;   
+    border-radius: 5% ; 
 }
 
 .mp-score p {
@@ -33,6 +38,23 @@
     background-color: #c3aa67;
     color: black;
     padding: 0% 3%;
-    height: 50%;
+    height: 55%;
+    align-items: center;
+    display: flex;
+    border-radius: 5%;
+}
+
+.mp-score-segment {
+    
+    background-color: rgb(19, 19, 19);
+    border-radius: 5%;    
+    border: 1px solid rgb(84, 55, 0);
+    height: 40%;
+    margin: 1%;
+    padding: 1%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
 }
 
