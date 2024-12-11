@@ -1,25 +1,70 @@
 import './Menu.css';
 import logo from '../../../assets/logo.png'
+import { useEffect, useState } from 'react';
 
 
-function Menu({players, board, start}) {
-    
-    return(
-        <>
-        <div>
-            <img src={logo}/>
+function Menu({ players, board, start }) {
+    const [selectedPlayer, setSelectedPlayer] = useState(null);
+    const [selectedBoard, setSelectedBoard] = useState(null);
+
+    useEffect(() => {
+      setSelectedPlayer(1);
+      setSelectedBoard(4);
+    }, []);
+  
+    const handlePlayerSelection = (playerCount) => {
+      setSelectedPlayer(playerCount); 
+      players(playerCount); 
+    };
+  
+    const handleBoardSelection = (boardSize) => {
+      setSelectedBoard(boardSize);
+      board(boardSize);
+    };
+  
+    return (
+      <>
+        <div className="menu-wrapper">
+          <img src={logo} alt="Logo" />
+          <div className="menu-settings">
             <h2>Cantidad de jugadores</h2>
-            <button onClick={ () => players(1)}>1</button>
-            <button onClick={ () => players(2)}>2</button>
+            <button
+              className={selectedPlayer === 1 ? 'selected' : ''}
+              onClick={() => handlePlayerSelection(1)}
+            >
+              1
+            </button>
+            <button
+              className={selectedPlayer === 2 ? 'selected' : ''}
+              onClick={() => handlePlayerSelection(2)}
+            >
+              2
+            </button>
             <h2>Tamaño del tablero</h2>
-            <button onClick={ () => board(4)}>4x4</button>
-            <button onClick={ () => board(6)}>6x6</button>
-            <button onClick={ () => board(8)}>8x8</button>   
+            <button
+              className={selectedBoard === 4 ? 'selected' : ''}
+              onClick={() => handleBoardSelection(4)}
+            >
+              4x4
+            </button>
+            <button
+              className={selectedBoard === 6 ? 'selected' : ''}
+              onClick={() => handleBoardSelection(6)}
+            >
+              6x6
+            </button>
+            <button
+              className={selectedBoard === 8 ? 'selected' : ''}
+              onClick={() => handleBoardSelection(8)}
+            >
+              8x8
+            </button>
+          </div>
         </div>
-        <button onClick={ () => start(false)}>comenzar</button>     
-        </>
-    )
-}
+        <button onClick={() => start(false)}>comenzar</button>
+      </>
+    );
+  }
 
 
 export default Menu;

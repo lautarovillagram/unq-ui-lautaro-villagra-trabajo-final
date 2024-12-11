@@ -1,0 +1,22 @@
+.menu-settings {
+    background-color: #1e1e1e;
+    width: 40%;
+    border-radius: 2%;
+    margin: 5%;
+    padding: 0 0 4% 0;
+}
+
+.menu-wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100hv;
+}
+
+.selected {    
+  background-color: orange;
+    color: white; 
+    border: 2px solid orange; 
+  }
+
+  
