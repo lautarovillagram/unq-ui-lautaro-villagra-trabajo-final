@@ -25,5 +25,7 @@ npm install
 
 Para ejecutar, se debe ejecutar el siguiente comando en consola:
 
-```npm run dev```
+```
+npm run dev
+```
 
