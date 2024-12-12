@@ -5,7 +5,9 @@ Memotest inspirado en la edicion 2024 de la copa conmebol Libertadores
 ## Incluye:
 
 -Los 32 equipos participantes
+
 -Modalidades un jugador y dos jugadores
+
 -Tres tableros
 
 ## Instalacion:
