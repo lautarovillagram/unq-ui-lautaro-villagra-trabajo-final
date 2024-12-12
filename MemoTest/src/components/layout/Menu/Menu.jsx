@@ -1,6 +1,6 @@
 import './Menu.css';
 import logo from '../../../assets/logo.png'
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 
 function Menu({ players, board, start }) {
