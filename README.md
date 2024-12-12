@@ -14,7 +14,8 @@ Memotest inspirado en la edicion 2024 de la copa conmebol Libertadores
 
 Para instalar, se deben ejecutar los siguientes comandos en consola:
 
-```git clone https://github.com/lautarovillagram/unq-ui-lautaro-villagra-trabajo-final.git
+```
+git clone https://github.com/lautarovillagram/unq-ui-lautaro-villagra-trabajo-final.git
 cd unq-ui-lautaro-villagra-trabajo-final
 cd MemoTest
 npm install
