@@ -6,14 +6,9 @@ function WinnerMessage({turns, menu, restart, result}){
         console.log(result);
         return (
            result.winner === "tie" ?     
-           <h2>El marcador quedó igualado {result.score}</h2>
-       
+           <h2>El marcador quedó igualado {result.score}</h2>       
             :
-            <h2>Felicitaciones {result.winner}! Ganaste el partido por {result.score}</h2>
-
-
-
-           
+            <h2>Felicitaciones {result.winner}! Ganaste el partido por {result.score}</h2>           
         )
     }
     return(

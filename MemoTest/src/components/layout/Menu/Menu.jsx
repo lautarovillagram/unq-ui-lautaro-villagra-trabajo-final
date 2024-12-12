@@ -4,13 +4,10 @@ import { useEffect, useState } from 'react';
 
 
 function Menu({ players, board, start }) {
-    const [selectedPlayer, setSelectedPlayer] = useState(null);
-    const [selectedBoard, setSelectedBoard] = useState(null);
+    const [selectedPlayer, setSelectedPlayer] = useState(1);
+    const [selectedBoard, setSelectedBoard] = useState(4);
 
-    useEffect(() => {
-      setSelectedPlayer(1);
-      setSelectedBoard(4);
-    }, []);
+   
   
     const handlePlayerSelection = (playerCount) => {
       setSelectedPlayer(playerCount); 
