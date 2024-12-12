@@ -23,7 +23,7 @@ npm install
 
 ## Ejecución:
 
-Para ejecutar, se debe ejecutar el siguiente comando en consola:
+Para iniciar la aplicación, se debe ejecutar el siguiente comando en consola:
 
 ```
 npm run dev
