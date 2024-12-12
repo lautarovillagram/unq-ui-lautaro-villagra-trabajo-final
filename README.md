@@ -12,6 +12,8 @@ Memotest inspirado en la edicion 2024 de la copa conmebol Libertadores
 
 ## Instalacion:
 
+Este proyecto requiere Node.js y npm.
+
 Para instalar, se deben ejecutar los siguientes comandos en consola:
 
 ```
