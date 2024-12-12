@@ -97,10 +97,7 @@ const data = {
       { id: "30", image: saopaulo },
       { id: "30", image: saopaulo },  
       { id: "31", image: cerroporteño },
-      { id: "31", image: cerroporteño },  
-
-
-      
+      { id: "31", image: cerroporteño },        
     ],
   };
 

@@ -7,13 +7,10 @@
     background-color: rgb(51, 50, 50);
     height: 2%;
     padding: 2%;
+    border: 1px solid orange;
 }
 
-.sp-turns-counter {
-    justify-content: center;
-    background-color: orange;  
-    height: 100%;
-    width: 15%;
-    font-weight: bold;     
-    
+
+.sp-turns h2 {
+    font-size: x-large;
 }

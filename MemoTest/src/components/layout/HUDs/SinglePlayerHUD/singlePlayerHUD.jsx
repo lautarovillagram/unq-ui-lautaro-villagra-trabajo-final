@@ -6,8 +6,7 @@ function SinglePlayerHUD({playedTurns, returnToMenu, restartGame, gameStatus}) {
         <WinnerMessage turns={playedTurns} menu={returnToMenu} restart={restartGame}/>    
         :
         <div className="sp-turns">
-            <h2>Turnos: </h2>
-            <div className="sp-turns-counter">{playedTurns}</div>
+            <h2>Turnos: {playedTurns}</h2>
         </div>
     )
             

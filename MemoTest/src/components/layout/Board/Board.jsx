@@ -15,12 +15,6 @@ function Board({size, toggleMenu, players}) {
         setTurns(turns + 1);
     }
 
-    useEffect(() => {
-        console.log(pairs + ' // ' + revealedPairs)
-      }, [revealedPairs]);
-
-
-
     function addRevealedPair() {
         setRevealedPairs(revealedPairs + 1)
     }

@@ -68,11 +68,8 @@ function MultiPlayerHUD({playedTurns, revealedPairs, gameStatus, returnToMenu, r
             </div>
         
         <h2>Turno del Jugador {playerTurn}</h2>
-        </div>
-        
-        
-        }
-        
+        </div>       
+        }        
         
         </>
     )

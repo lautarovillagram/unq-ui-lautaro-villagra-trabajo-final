@@ -26,11 +26,8 @@ function Grid( {board, turnCounter, revealed}) {
       const [firstCard, secondCard] = clickedCards;
   
       if (firstCard.id === secondCard.id) {
-        console.log("same cards");
         revealed();
       } else {
-        console.log(clickedCards);
-        console.log("different cards");
         triggerReset(clickedCards.map((card) => card.id));
       }
       setTimeout(() => setClickedCards([]), 1000);
@@ -42,18 +39,14 @@ function Grid( {board, turnCounter, revealed}) {
       setResetSignal(idsToReset);
       setTimeout(() => setResetSignal(null), 0); 
       
-    };
-
-    
+    };    
 
 
     useEffect(() => {
       if (clickedCards.length === 2) {
         checkIfSameCard();
       }
-    }, [clickedCards]);
-   
-
+    }, [clickedCards]);  
     
     return (
       <>

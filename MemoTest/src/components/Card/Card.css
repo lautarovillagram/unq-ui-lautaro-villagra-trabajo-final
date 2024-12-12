@@ -12,7 +12,7 @@
 }
 
 .unclicked-card {
- border: 2px solid rgb(0, 0, 0);
+    border: 2px solid rgb(0, 0, 0);
 }
 
 .clicked-card {
